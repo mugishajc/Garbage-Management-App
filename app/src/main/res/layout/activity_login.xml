@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="10dp">
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/textuserClicked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_txt_phone"
+                android:fontFamily="serif"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:paddingLeft="60dp"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="285dp" />
+
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:paddingLeft="60dp"
+                android:hint="Password"
+                android:textColor="@color/colorPrimary"
+                android:inputType="textPassword"
+                android:background="@drawable/bg_txt_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_margin="1dp"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/chremember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="serif"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Remember Me" />
+
+                <TextView
+                    android:id="@+id/txtforgotpwd"
+                    android:layout_width="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password"
+                    android:textColor="#000"/>
+
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:textAllCaps="false"
+                android:background="@drawable/mybutton"
+                android:text="Sign In"
+                android:layout_marginBottom="100dp"
+                android:textSize="20dp"
+                android:fontFamily="serif"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/LoginGobBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:fontFamily="serif"
+                android:text="Don't you to choose another Account? Go Back"
+                android:textColor="@color/colorPrimary"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Powered by Titus :: BIT - UTB"
+    android:layout_marginBottom="10dp"
+
+    />
+</LinearLayout>

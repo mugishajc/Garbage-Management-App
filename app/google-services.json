@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "238887956069",
+    "project_id": "garbage-management-app---titus",
+    "storage_bucket": "garbage-management-app---titus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238887956069:android:b8ca26e1e55c3df868608c",
+        "android_client_info": {
+          "package_name": "rw.ac.utb.garbagemanagementapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238887956069-tjv8j3bfa0q6h8me9lk5sfcm0qakjip8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6BlHGJ7IuPnPo78DZhFE925Is_KoZ-O8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238887956069-tjv8j3bfa0q6h8me9lk5sfcm0qakjip8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
