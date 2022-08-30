@@ -23,7 +23,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
     private TextView tvgobackAddClient;
     private EditText etPasswordClient,etStreetCodeClient,etSubZoneClient,etMainZoneClient,etPhoneClient,etNIDClient,etNamesClient;
     private FirebaseDatabase database;
-    private DatabaseReference table_Client,table_ClientLocation;
+    private DatabaseReference table_Client,table_ClientLocation,tableaddclntAdm;
     private Button btnAddClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         //Init Firebase
         database = FirebaseDatabase.getInstance("https://garbage-management-app---titus-default-rtdb.firebaseio.com/");
         table_Client = database.getReference("GarbageManagement").child("Client");
+        tableaddclntAdm = database.getReference("GarbageManagement").child("AllClients");
         table_ClientLocation=database.getReference("GarbageManagement").child("ClientLocation");
 
         btnAddClient=findViewById(R.id.btnAddClient);
@@ -96,8 +97,9 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.exists()) {
-                                Toast.makeText(AddClientActivity.this, "Sorry This Client already exists in our systems", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddClientActivity.this, "Sorry This Client already exists in our database", Toast.LENGTH_SHORT).show();
                             } else {
+//                                tableaddclntAdm.setValue(client);
                                 table_Client.child(etPhoneClient.getText().toString().trim()).setValue(client);
                                 table_ClientLocation.child(etMainZoneClient.getText().toString().trim()).child(etPhoneClient.getText().toString().trim()).setValue(client);
                                 Toast.makeText(getApplicationContext(), "New Client / Customer has been saved Successully", Toast.LENGTH_LONG).show();

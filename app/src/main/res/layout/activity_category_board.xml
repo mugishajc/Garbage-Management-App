@@ -124,7 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Powered by Titus : BIT-UTB"
+        android:text="Powered by Tite : BIT-UTB"
         android:gravity="center"
         android:layout_gravity="center"
         android:textColor="#fff"

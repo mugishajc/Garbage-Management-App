@@ -32,7 +32,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
     private TextView salitation, tvshowstafflocation,Tvroleadmin,tvplatenumber,tvloggedinnames,tvsenderphone,tvsendernames;
     private ImageView imageView;
-    private MaterialCardView LinAddUser, linViewStaff, LinAddClient, linViewClient,LinViewComplain,linAdminViewComplain,linAdminViewFeedback;
+    private MaterialCardView LinAddUser, linViewStaff, LinAddClient, linViewClient,LinViewComplain,linAdminViewComplain,linAdminViewFeedback,linViewAllClient;
     private Button BtnRequestComplain, BtnPayMonthlySubscription,BtnSendFeeback;
     private LinearLayout linClientMain;
 
@@ -57,6 +57,8 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
 
         linAdminViewComplain=findViewById(R.id.linAdminViewComplain);
+        linViewAllClient=findViewById(R.id.linViewAllClient);
+        linViewAllClient.setOnClickListener(this);
 
         BtnRequestComplain = findViewById(R.id.BtnRequestComplain);
         BtnRequestComplain.setOnClickListener(this);
@@ -95,6 +97,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
         if (getIntent().getStringExtra("role").equals("Admin")) {
             linViewStaff.setVisibility(View.VISIBLE);
             LinAddUser.setVisibility(View.VISIBLE);
+            linViewAllClient.setVisibility(View.VISIBLE);
             linAdminViewFeedback.setVisibility(View.VISIBLE);
             Tvroleadmin.setText(getIntent().getStringExtra("role"));
             linAdminViewComplain.setVisibility(View.VISIBLE);
@@ -251,6 +254,11 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
                 });
                 builder.show();
                 break;
+
+            case R.id.linViewAllClient:
+                startActivity(new Intent(MainScreenActivity.this, ViewAllActivity.class));
+                break;
+
             case R.id.BtnPayMonthlySubscription:
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(MainScreenActivity.this);
                 builder1.setCancelable(false);
@@ -320,7 +328,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.help:
-                Toast.makeText(this, "Visit our website at www.utb.ac.rw", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Visit our website at www.utb.ac.rw", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.about:
                 Toast.makeText(this, "Call us on on +250788647092", Toast.LENGTH_LONG).show();
@@ -372,7 +380,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
     private  void payment(){
 
-        String ussdCode = "*182*1*1*" + getIntent().getStringExtra("LoggedInPhone") +"100"+ Uri.encode("#");
+        String ussdCode = "*182*1*1*" + "0788647092" +"100"+ Uri.encode("#");
         startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ussdCode)));
     }
 

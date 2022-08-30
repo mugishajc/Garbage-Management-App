@@ -23,8 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Good"
-                android:padding="6dp"
-                android:textSize="18sp"
+                android:padding="5dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -32,9 +32,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Morning"
-                android:padding="2dp"
+                android:padding="1dp"
                 android:textStyle="bold"
-                android:textSize="17sp"/>
+                android:textSize="12sp"/>
 
 
 
@@ -196,86 +196,130 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-        android:visibility="gone"
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:id="@+id/linAdminViewComplain"
-        app:cardElevation="5dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/colorPrimary"
-                android:contentDescription="Todo"
-                android:padding="15dp"
-                android:src="@drawable/ic_drive_24" />
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:visibility="gone"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:id="@+id/linAdminViewComplain"
+            app:cardElevation="5dp">
 
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray"
-                android:layout_marginTop="10dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View All Complains"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="Todo"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_drive_24" />
 
-        </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    android:layout_marginTop="10dp"/>
 
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All Complains"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp"/>
 
+            </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:visibility="gone"
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:id="@+id/linAdminViewFeedback"
-        app:cardElevation="5dp">
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:visibility="gone"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:id="@+id/linAdminViewFeedback"
+            app:cardElevation="5dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/colorPrimary"
-                android:contentDescription="Todo"
-                android:padding="15dp"
-                android:src="@drawable/ic_drive_24" />
-
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray"
-                android:layout_marginTop="10dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View All Feedacks"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="Todo"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_drive_24" />
 
-        </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    android:layout_marginTop="10dp"/>
 
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All Feedacks"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:visibility="gone"
+            android:layout_margin="5dp"
+            android:id="@+id/linViewAllClient"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All Clients"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -324,6 +368,8 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="130dp"
             android:layout_height="150dp"
@@ -363,6 +409,7 @@
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
 
 
         <LinearLayout
