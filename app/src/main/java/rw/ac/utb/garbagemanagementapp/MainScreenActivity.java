@@ -377,7 +377,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onItemClick(int position) {
 
-        Toast.makeText(this, "clicked " , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "clicked well " , Toast.LENGTH_SHORT).show();
     }
 
     private  void payment(){
