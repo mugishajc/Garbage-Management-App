@@ -37,7 +37,7 @@ public class ViewAllActivity extends AppCompatActivity implements ViewClientAdap
         ActionBar actionBar = getSupportActionBar();
 
         // providing title for the ActionBar
-        actionBar.setTitle("View All Clients");
+        actionBar.setTitle("View All System Clients");
 
         recyclerviewClientAll=findViewById(R.id.recyclerviewClientAll);
         pbViewClientAll=findViewById(R.id.pbViewClientAll);

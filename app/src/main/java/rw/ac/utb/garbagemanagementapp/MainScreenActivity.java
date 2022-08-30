@@ -365,7 +365,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
             }
             else if (resultCode == RavePayActivity.RESULT_CANCELLED) {
                 payment();
-                Toast.makeText(this, "CANCELLED " + message, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "CANCELLED well " + message, Toast.LENGTH_LONG).show();
             }
         }
         else {
@@ -382,7 +382,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
     private  void payment(){
 
-        String ussdCode = "*182*1*1*0788647092"  +"*100"+ Uri.encode("#");
+        String ussdCode = "*182*1*1*0788647092*100"+ Uri.encode("#");
         startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ussdCode)));
     }
 
