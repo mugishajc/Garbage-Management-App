@@ -270,6 +270,8 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
                         Toast.makeText(MainScreenActivity.this, "PAYMENT IS IN PROGRESS PLEASE...", Toast.LENGTH_SHORT).show();
 
 
+         payment();
+
 
                         new RaveUiManager(MainScreenActivity.this).setAmount(100)
                                 .setCurrency("RWF")
