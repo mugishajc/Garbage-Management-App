@@ -1,10 +1,13 @@
 package rw.ac.utb.garbagemanagementapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -268,11 +271,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(MainScreenActivity.this, "PAYMENT IS IN PROGRESS PLEASE...", Toast.LENGTH_SHORT).show();
-
-
-         payment();
-
-
+                           payment();
                         new RaveUiManager(MainScreenActivity.this).setAmount(100)
                                 .setCurrency("RWF")
                                 .setCountry("RW")
@@ -296,7 +295,7 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
                                 .acceptUkPayments(true)
                                 .acceptBankTransferPayments(true)
                                 .acceptUssdPayments(true)
-                                .acceptBarterPayments(false)
+                                .acceptBarterPayments(true)
                                 .acceptFrancMobileMoneyPayments(false,"France")
                                 .allowSaveCardFeature(false)
                                 .onStagingEnv(false)
@@ -382,8 +381,17 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
     private  void payment(){
 
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
         String ussdCode = "*182*1*1*0788647092*100"+ Uri.encode("#");
-        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ussdCode)));
+        callIntent.setData(Uri.parse("tel:" +ussdCode));
+
+        if (ActivityCompat.checkSelfPermission(MainScreenActivity.this,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
+//        String ussdCode = "*182*1*1*0788647092*100"+ Uri.encode("#");
+//        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ussdCode)));
     }
 
 
