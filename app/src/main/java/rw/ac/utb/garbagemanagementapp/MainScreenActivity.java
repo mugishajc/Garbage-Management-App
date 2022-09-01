@@ -266,23 +266,23 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(MainScreenActivity.this);
                 builder1.setCancelable(false);
                 builder1.setTitle("Important Comfirmation");
-                builder1.setMessage("Are yo usure you want to pay ? if yes please press on button pay monthly subscription");
-                builder1.setPositiveButton("REQUEST", new DialogInterface.OnClickListener() {
+                builder1.setMessage("Are yo usure you want to pay ? if yes please press on button BANKCARD to pay with online Bank cards or other Flutterwave payment gateway used. \n monthly subscription\n \nIf you want to pay with MTN mobile money directly please press on MOMO button and enter you Mobile money to PIN to pay monthly subscription fees for garbage");
+                builder1.setPositiveButton("BANK CARD", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(MainScreenActivity.this, "PAYMENT IS IN PROGRESS PLEASE...", Toast.LENGTH_SHORT).show();
-                           payment();
+
                         new RaveUiManager(MainScreenActivity.this).setAmount(100)
                                 .setCurrency("RWF")
                                 .setCountry("RW")
-                                .setEmail("mihigojeanpele@gmail.com")
+                                .setEmail("jcmugisha1@gmail.com")
                                 .setfName( getIntent().getStringExtra("LoggedInNames"))
                                 .setlName("Titus")
                                 .setNarration("PAY FOR Garbage fees")
                                 .setPublicKey("FLWPUBK-72b1cddaa14d3497296ecc503b4dfd58-X")
                                 .setEncryptionKey("e65716b8e64695fc9c915c0d")
                                 .setTxRef(System.currentTimeMillis()+" Ref")
-                                .setPhoneNumber("+250788503968", true)
+                                .setPhoneNumber("+250788647092", true)
                                 .acceptAccountPayments(true)
                                 .acceptCardPayments(true)
                                 .acceptMpesaPayments(true)
@@ -307,10 +307,18 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
                     }
                 });
-                builder1.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                builder1.setNegativeButton("MOMO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    payment();
+
+                    }
+                });
+                builder1.setNeutralButton("CANCEL", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(MainScreenActivity.this, "Cancelled The payment Processing   / Discarded", Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 builder1.show();
@@ -381,17 +389,17 @@ public class MainScreenActivity extends AppCompatActivity implements View.OnClic
 
     private  void payment(){
 
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
         String ussdCode = "*182*1*1*0788647092*100"+ Uri.encode("#");
-        callIntent.setData(Uri.parse("tel:" +ussdCode));
+        //request for permission
+        if (ActivityCompat.checkSelfPermission(MainScreenActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainScreenActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 1);
+            Toast.makeText(this, "Please enable for phone call permission", Toast.LENGTH_LONG).show();
+        } else {
+            //dial Ussd code
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ussdCode)));
 
-        if (ActivityCompat.checkSelfPermission(MainScreenActivity.this,
-                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            return;
         }
-        startActivity(callIntent);
-//        String ussdCode = "*182*1*1*0788647092*100"+ Uri.encode("#");
-//        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + ussdCode)));
+
     }
 
 
